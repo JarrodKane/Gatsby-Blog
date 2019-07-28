@@ -1,3 +1,19 @@
+# Gatsby blog
+
+<p>Objective of this project was to use Gatsby and react to create my own personal blog.
+The blog is to be used to present my learnings, trainnig, and a place to share my podcast </p>
+
+---
+
+---
+
+## TODO:
+
+[ ] Theme the blog
+[ ] Add in podcast feed as posts
+[ ] Connect up social media
+[ ] Create readme
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
