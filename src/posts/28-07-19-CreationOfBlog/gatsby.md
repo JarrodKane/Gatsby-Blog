@@ -4,8 +4,6 @@ date: "2019-07-28"
 topic: "Dev"
 ---
 
-# The creation of my blog
-
 This post is all about learning Gatsby, the React-based static site generator that is being used right now on this blog!
 
 ## Structure

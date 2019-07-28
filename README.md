@@ -9,10 +9,22 @@ The blog is to be used to present my learnings, trainnig, and a place to share m
 
 ## TODO:
 
-[ ] Theme the blog
-[ ] Add in podcast feed as posts
+[ ] Theme the blog posts
+[ ] Theme entire blog layout
+[ ] Copy
+[ ] About
+[ ] Bio
+[ ] Home
+[ ] Contact
+[ ] Podcast
+[ ] Add in podcast page or topic to get the feed from pinecast
 [ ] Connect up social media
 [ ] Create readme
+[ ] Add in estimated time to read
+[ ] Add in complition bar
+[ ] Create Default template for each blog Post
+[ ] Sticky collapsable Sidebar menu that anchors to - Content, Summary, Links
+[ ] Search via topics
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
