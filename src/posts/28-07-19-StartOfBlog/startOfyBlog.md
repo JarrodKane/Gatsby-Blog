@@ -27,3 +27,5 @@ It's built to bring together many different aspects of my life and all my online
 From writting, to MMA, to development, and my love for bad movies.
 
 I
+
+![Nick Cage](./nick.jpg)
