@@ -2,10 +2,10 @@
   margin: 0 auto;
   max-width: 750px;
   padding: 1rem;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #45146d;
 }
 
 .content {
@@ -16,16 +16,17 @@ body {
   color: #fcfdfd;
 }
 
-.background {
-  background-color: #45146d;
-  background-image: url(./waveBG.jpg);
+a {
+  color: #ffc5b6;
+  text-decoration: none;
+
+  &:hover {
+    color: #db6649;
+  }
 }
 
-.layer {
-  background-color: rgba(248, 247, 216, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
+.background {
+  background-color: #45146d;
   width: 100%;
   height: 100%;
 }
