@@ -1,7 +1,9 @@
 # Gatsby blog
 
-<p>Objective of this project was to use Gatsby and react to create my own personal blog.
-The blog is to be used to present my learnings, trainnig, and a place to share my podcast </p>
+Objective of this project is to use Gatsby and react to create my own personal blog.
+The blog is a place to share my thoughts.
+It uses the netlify CMS as a backend and sign in, react hooks are used for
+context to toggle the color scheme, and BEM css is used in the project
 
 ---
 
@@ -9,36 +11,34 @@ The blog is to be used to present my learnings, trainnig, and a place to share m
 
 ## TODO:
 
-[ ] Theme the blog posts
-[ ] Theme entire blog layout
-[ ] Copy
-[ ] About
-[ ] Bio
-[ ] Home
-[ ] Contact
-[ ] Podcast
-[ ] Add in podcast page or topic to get the feed from pinecast
-[ ] Connect up social media
-[ ] Create readme
-[ ] Add in estimated time to read
-[ ] Add in complition bar
-[ ] Create Default template for each blog Post
-[ ] Sticky collapsable Sidebar menu that anchors to - Content, Summary, Links
-[ ] Search via topics
+### Features
 
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's hello-world starter
-</h1>
+- [ ] Netlify CMS
+- [ ] Dark/Light theme (useContext)
+- [ ] RSS Feed
+- [ ] RSS Feed
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+### Testing
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+- [ ] Jest snapshot testing
+- [ ] Jest unit tests
+- [ ] Jest intergration tests
+
+### Styling
+
+- [ ] Blog post
+- [ ] Main pages
+- [ ] BEM Css
+
+### Steps/Content
+
+- [x] Create readme
+- [ ] About/Bio
+- [ ] Home
+- [ ] Contact
+- [ ] Links in social media
+
+---
 
 ## 🚀 Quick start
 
