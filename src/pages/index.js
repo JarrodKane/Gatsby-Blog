@@ -7,7 +7,9 @@ import Head from "../components/head"
 const IndexPage = () => {
   return (
     <Layout>
-      <Head title="Home" />
+      <Head title="Home">
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      </Head>
       <h1>Welcome to my domain</h1>
       <h2>
         I'm Jarrod I'm a front end developer, podcaster, and wannabe athelete
