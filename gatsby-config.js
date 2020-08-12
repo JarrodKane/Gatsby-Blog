@@ -1,34 +1,34 @@
-
 module.exports = {
   siteMetadata: {
     title: "Jarrods Blog",
-    author: 'Jarrod Kane'
+    author: "Jarrod Kane",
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass', 
+    `gatsby-plugin-netlify-cms`,
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sass",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'src',
-        path: `${__dirname}/src/`
-      }
+        name: "src",
+        path: `${__dirname}/src/`,
+      },
     },
-    'gatsby-plugin-sharp', {
-      resolve:  'gatsby-transformer-remark',
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          'gatsby-remark-relative-images', 
+          "gatsby-remark-relative-images",
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 750,
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-      }
-    }
-   
-  ]
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+  ],
 }

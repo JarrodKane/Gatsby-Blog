@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  repo: Trojan-cat/Gatsby-Blog
+  branch: master # Branch to update (optional; defaults to master)
+#Don't indent next line
+published_mode: editorial_workflow
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+
