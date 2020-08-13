@@ -1,4 +1,5 @@
 ---
+slug: "/blog/my-first-post"
 title: "The creation of my blog"
 date: "2019-07-28"
 topic: "Dev"

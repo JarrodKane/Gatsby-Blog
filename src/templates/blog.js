@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import Layout from "../components/layout"
 import Head from "../components/head"
@@ -17,15 +16,46 @@ query($slug: String!) {
 }
 `
 */
+const data = useStaticQuery(graphql`
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            path
+          }
+          fileAbsolutePath
+          rawMarkdownBody
+        }
+      }
+    }
+  }
+`)
 
 const Blog = props => {
+  const options = {
+    renderNode: {
+      "embedded-asset-block": node => {
+        const alt = node.data.target.fields.title["en-US"]
+        const url = node.data.target.fields.file["en-US"].url
+        return <img alt={alt} src={url} />
+      },
+    },
+  }
+
   return (
-    <>
-      <h1>Blog is currently under development</h1>
-      <a href="https://github.com/Trojan-Cat/Gatsby-Blog" rel="nofollow">
-        Keep up to date with changes on my Github
-      </a>
-    </>
+    <Layout>
+      <Head title={props.data.contentfulBlogPost.title} />
+      <h1>{props.data.contentfulBlogPost.title}</h1>
+      <p>{props.data.contentfulBlogPost.publishDate}</p>
+      {documentToReactComponents(
+        props.data.contentfulBlogPost.body.json,
+        options
+      )}
+    </Layout>
   )
   /*
   const options = {

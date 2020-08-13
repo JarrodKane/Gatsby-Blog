@@ -37,6 +37,7 @@ const data = useStaticQuery(graphql`
             frontmatter {
               title
               date(formatString: "MMMM DD, YYYY")
+              path
             }
             fileAbsolutePath
             rawMarkdownBody
@@ -45,19 +46,24 @@ const data = useStaticQuery(graphql`
       }
     }
   `)
-
   return (
-    <>
-      <h1 style={{ color: "black" }}>Blog is currently under development</h1>
-      <a
-        style={{ color: "blue" }}
-        href="https://github.com/Trojan-Cat/Gatsby-Blog"
-        rel="nofollow"
-      >
-        Keep up to date with changes on my Github
-      </a>
-    </>
+    <Layout>
+      <Head title="Blog" />
+      <h1>My Blog</h1>
+      <ol className={blogStyles.posts}>
+        {data.allMarkdownRemark.edges.map(edge => {
+          return (
+            <li key={edge.node.id} className={blogStyles.post}>
+              <Link to={`/blog/${edge.node.frontmatter.path}`}>
+                <h2>{edge.node.frontmatter.title}</h2>
+              </Link>
+            </li>
+          )
+        })}
+      </ol>
+    </Layout>
   )
+
   /*
   return (
     <Layout>
