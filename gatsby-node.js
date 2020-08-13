@@ -16,11 +16,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
 
   res.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
