@@ -13,6 +13,8 @@ collections:
     label: Blog
     folder: blog
     create: true
+    slug: 'index'
+    path: '{{title}}/index'
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
