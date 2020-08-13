@@ -16,25 +16,50 @@ query($slug: String!) {
 }
 `
 */
-const data = useStaticQuery(graphql`
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            path
-          }
-          fileAbsolutePath
-          rawMarkdownBody
-        }
+
+export default function Template({
+  data, // this prop will be injected by the GraphQL query below.
+}) {
+  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { frontmatter, html } = markdownRemark
+  return (
+    <div className="blog-post-container">
+      <div className="blog-post">
+        <h1>{frontmatter.title}</h1>
+        <h2>{frontmatter.date}</h2>
+        <div
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
+    </div>
+  )
+}
+export const pageQuery = graphql`
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+        title
       }
     }
   }
-`)
+`
 
+/*export const query = graphql`
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+        title
+      }
+    }
+  }
+`
 const Blog = props => {
   const options = {
     renderNode: {
@@ -79,7 +104,8 @@ const Blog = props => {
       )}
     </Layout>
   )
-  */
-}
+
 
 export default Blog
+
+  */
