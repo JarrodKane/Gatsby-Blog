@@ -27,6 +27,25 @@ const data = useStaticQuery(graphql`
   
   `)
   */
+
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              date(formatString: "MMMM DD, YYYY")
+            }
+            fileAbsolutePath
+            rawMarkdownBody
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <>
       <h1 style={{ color: "black" }}>Blog is currently under development</h1>
