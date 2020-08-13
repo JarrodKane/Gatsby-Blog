@@ -21,6 +21,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
+
   res.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       component: blogTemplate,
