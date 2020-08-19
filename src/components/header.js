@@ -15,7 +15,7 @@ const Header = props => {
 
   return (
     <header className={headerStyles.header}>
-      <button onClick={props.themeToggle}>THEME</button>
+      <button onClick={props.themeToggle}>Change Theme</button>
       <h1>
         <Link className={headerStyles.title} to="/">
           {data.site.siteMetadata.title}

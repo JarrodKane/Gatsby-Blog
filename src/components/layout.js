@@ -1,22 +1,17 @@
-import React, { useState } from "react"
+import React from "react"
 import { ThemeProvider } from "styled-components"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../styles/index.scss"
 import layoutStyles from "./layout.module.scss"
-import { lightTheme, darkTheme } from "./AppTheme"
+import { useDarkMode, lightTheme, darkTheme } from "./AppTheme"
 import { GlobalStyles } from "./globalStyles"
 
 const Layout = props => {
-  const [theme, setTheme] = useState("light")
-  const themeToggle = () => {
-     theme === "light" ? setTheme("dark") : setTheme("light")
-    console.log("Theme changed")
-  }
-
+  const [theme, themeToggle] = useDarkMode()
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <GlobalStyles/>
+      <GlobalStyles />
       <div className={layoutStyles.background}>
         <div className={layoutStyles.layer}>
           <div className={layoutStyles.container}>

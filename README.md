@@ -14,7 +14,7 @@ context to toggle the color scheme, and BEM css is used in the project
 ### Features
 
 - [x] Netlify CMS
-- [ ] Dark/Light theme (useContext)
+- [x] Dark/Light theme (useContext)
 - [ ] RSS Feed
 
 ### Testing
