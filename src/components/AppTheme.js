@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 const LOCAL_STORAGE_KEY = "jarrods.theme"
 
 export const useDarkMode = () => {
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("dark")
 
   const themeToggle = () => {
     theme === "light" ? setTheme("dark") : setTheme("light")
