@@ -22,13 +22,10 @@ export const useDarkMode = () => {
 }
 
 export const lightTheme = {
-  html: {
-    body: "#FFF",
-    text: "#363537",
-    toggleBorder: "#FFF",
-    background: "#363537",
-  },
-  a: { color: "blue" },
+  body: "#FFF",
+  text: "#363537",
+  toggleBorder: "#FFF",
+  background: "#363537",
 }
 export const darkTheme = {
   body: " #45146d;",
