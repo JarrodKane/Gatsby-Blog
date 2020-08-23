@@ -3,12 +3,15 @@ import { ThemeProvider } from "styled-components"
 import "../styles/index.scss"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import layoutStyles from "./layout.module.scss"
+import layoutStyles from "../styles/layout.module.scss"
 import { useDarkMode, lightTheme, darkTheme } from "./AppTheme"
 import { GlobalStyles } from "./globalStyles"
 
 const Layout = props => {
-  const [theme, themeToggle] = useDarkMode()
+  const [theme, themeToggle, componentMounted] = useDarkMode()
+  if (!componentMounted) {
+    return <div />
+  }
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
@@ -16,7 +19,7 @@ const Layout = props => {
         <div className={layoutStyles.layer}>
           <div className={layoutStyles.container}>
             <div className={layoutStyles.content}>
-              <Header themeToggle={themeToggle} />
+              <Header themeToggle={themeToggle} theme={theme} />
               {props.children}
             </div>
             <Footer />

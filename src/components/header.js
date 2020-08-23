@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import headerStyles from "./header.module.scss"
+import headerStyles from "../styles/header.module.scss"
+import styled from "styled-components"
+//import "../styles/header.module.scss"
 
 const Header = props => {
   const data = useStaticQuery(graphql`
@@ -13,13 +15,19 @@ const Header = props => {
     }
   `)
 
+  const light = `#000000`
+  const dark = `#ffff`
+  const Title = styled(props => <Link {...props} />)`
+    color: ${props.theme === "dark" ? dark : light};
+    font-size: 3rem;
+    text-decoration: none;
+  `
+
   return (
     <header className={headerStyles.header}>
       <button onClick={props.themeToggle}>Change Theme</button>
       <h1>
-        <Link className={headerStyles.title} to="/">
-          {data.site.siteMetadata.title}
-        </Link>
+        <Title to="/">{data.site.siteMetadata.title}</Title>
       </h1>
       <nav>
         <ul className={headerStyles.navList}>

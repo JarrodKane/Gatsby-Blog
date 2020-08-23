@@ -3,6 +3,7 @@ const LOCAL_STORAGE_KEY = "jarrods.theme"
 
 export const useDarkMode = () => {
   const [theme, setTheme] = useState("dark")
+  const [componentMounted, setComponentMounted] = useState(false)
 
   const themeToggle = () => {
     theme === "light" ? setTheme("dark") : setTheme("light")
@@ -15,10 +16,17 @@ export const useDarkMode = () => {
   }, [])
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(theme))
-  }, [theme])
+    const localTheme = window.localStorage.getItem("theme")
+    if (localTheme) {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(theme))
+    } else {
+      setTheme("light")
+      window.localStorage.setItem("theme", "light")
+    }
+    setComponentMounted(true)
+  }, [])
 
-  return [theme, themeToggle]
+  return [theme, themeToggle, componentMounted]
 }
 
 export const lightTheme = {
@@ -28,8 +36,17 @@ export const lightTheme = {
   background: "#363537",
 }
 export const darkTheme = {
-  body: " #45146d;",
+  body: "#2f2f2f",
   text: "#FAFAFA",
   toggleBorder: "#6B8096",
-  background: "#45146d",
+  background: "#2f2f2f",
+  h1: "pink",
 }
+
+/*export const darkTheme = {
+  body: "#2f2f2f",
+  text: "#FAFAFA",
+  toggleBorder: "#6B8096",
+  background: "#2f2f2f",
+}
+*/

@@ -3,11 +3,15 @@
 }
 
 .title {
-  color: #3eb2ff;
+  color: #000000;
   font-size: 3rem;
   text-decoration: none;
 }
-
+.dark {
+  color: #ffff;
+  font-size: 3rem;
+  text-decoration: none;
+}
 .nav-list {
   display: flex;
   list-style-type: none;
@@ -27,4 +31,8 @@
 
 .active-nav-item {
   color: #62edff;
+}
+
+.dark {
+  color: white;
 }
