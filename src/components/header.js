@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import headerStyles from "../styles/header.module.scss"
 import styled from "styled-components"
-//import "../styles/header.module.scss"
 
 const Header = props => {
   const data = useStaticQuery(graphql`

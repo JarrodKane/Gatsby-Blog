@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react"
 const LOCAL_STORAGE_KEY = "jarrods.theme"
 
-export const useDarkMode = () => {
+export const useDarkMode = props => {
   const [theme, setTheme] = useState("dark")
-  const [componentMounted, setComponentMounted] = useState(false)
+  //const [componentMounted, setComponentMounted] = useState(false)
 
+  console.log(props)
   const themeToggle = () => {
     theme === "light" ? setTheme("dark") : setTheme("light")
   }
 
-  //  Needed to store locally otherwise each time we change the page it'll reset the theme back to default
   useEffect(() => {
-    const themeJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
-    if (themeJSON != null) setTheme(JSON.parse(themeJSON))
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(theme))
+    console.log("called")
   }, [])
 
   useEffect(() => {
@@ -23,10 +23,9 @@ export const useDarkMode = () => {
       setTheme("light")
       window.localStorage.setItem("theme", "light")
     }
-    setComponentMounted(true)
-  }, [])
+  }, [theme])
 
-  return [theme, themeToggle, componentMounted]
+  return [theme, themeToggle]
 }
 
 export const lightTheme = {
@@ -42,11 +41,3 @@ export const darkTheme = {
   background: "#2f2f2f",
   h1: "pink",
 }
-
-/*export const darkTheme = {
-  body: "#2f2f2f",
-  text: "#FAFAFA",
-  toggleBorder: "#6B8096",
-  background: "#2f2f2f",
-}
-*/

@@ -7,11 +7,11 @@ import layoutStyles from "../styles/layout.module.scss"
 import { useDarkMode, lightTheme, darkTheme } from "./AppTheme"
 import { GlobalStyles } from "./globalStyles"
 
+// TODO: The layout is being created each time a page is changed
+// As a result the global theme is made each time, which is why it's refreshing and also not staying consistent
 const Layout = props => {
-  const [theme, themeToggle, componentMounted] = useDarkMode()
-  if (!componentMounted) {
-    return <div />
-  }
+  const [theme, themeToggle] = useDarkMode()
+
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
